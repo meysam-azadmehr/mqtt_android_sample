@@ -55,8 +55,8 @@ class MqttClient(private var context: Context) {
     }
 
     companion object {
-        const val brokerUrl = "tcp://192.168.0.115:1883"
-        var clientId = "clientTest"
+        const val brokerUrl = "tcp://192.168.60.210:1883"
+        var clientId = "te"
     }
 
 
@@ -105,6 +105,8 @@ class MqttClient(private var context: Context) {
 
     fun connect() {
         val mqttConnectOptions = MqttConnectOptions()
+        mqttConnectOptions.userName = "admin"
+        mqttConnectOptions.password = "123".toCharArray()
         mqttConnectOptions.isAutomaticReconnect = true
         mqttConnectOptions.isCleanSession = false
         Log.e("TAG", "Connecting: $brokerUrl")

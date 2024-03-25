@@ -40,7 +40,7 @@ fun MainScreen(
 
     Column(modifier = Modifier.padding(8.dp)) {
         Button(onClick = {
-           viewModel.unSubscrbeAll()
+           viewModel.unSubscribeAll()
         }) {
            Text(text = "Unsubscribe All")
         }
@@ -56,7 +56,7 @@ fun MainScreen(
                 LampItem(
                     onChangeStatus = { status ->
                         viewModel.publishMessage(
-                            topic = "/home/sensors/temp/kitchen",
+                            topic = "/home/room/sensors/lux",
                             message = status.toString()
                         )
                     },
@@ -67,7 +67,7 @@ fun MainScreen(
                 SwitchItem(
                     onChangeStatus = { status ->
                         viewModel.publishMessage(
-                            topic = "/home/sensors/temp/kitchen",
+                            topic = "/home/room/sensors/lux",
                             message = status.toString()
                         )
                     },
